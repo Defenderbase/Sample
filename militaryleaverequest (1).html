@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military Leave Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #ffcc01;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #252122;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Military Leave Application</h2>
+        <form onsubmit="sendEmail(); return false;">
+            <label for="name">Applicants Name:</label>
+            <input type="text" id="name" name="name" required>
+             <label for="name">Residential Address:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="name">Relationship with the Sergeant?</label>
+            <input type="text" id="name" name="name" required>
+
+              <label for="name">Sergeant Name:</label>
+            <input type="text" id="name" name="name" required>
+
+              <label for="name">SGT MOS number:</label>
+            <input type="text" id="name" name="name" required>
+
+              <label for="name">Unit:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="leave-type">Leave Type:</label>
+            <select id="leave-type" name="leave-type" required>
+                <option value="">Select Leave Type</option>
+                <option value="Vacation">Vacation</option>
+                <option value="Sick Leave">Sick Leave</option>
+                <option value="Emergency Leave">Emergency Leave</option>
+            </select>
+             <label for="duration">What is the reason for requesting military leave?</label>
+            <input type="text" id="duration" name="duration" required>
+
+              <label for="duration">Requested Leave Duration?</label><br>
+        <select id="duration">
+            
+            <option value="select">Select</option><option value="2 weeks">2 weeks</option>
+            <option value="1 month">1 month</option>
+            <option value="1 month 2 weeks">1 month 2 weeks</option>
+            <option value="2 months">2 months</option>
+            <option value="2 months 2 weeks">2 months 2 weeks</option>
+            <option value="3 months">3 months</option>
+            <option value="3 months 2 weeks">3 months 2 weeks</option>
+            <option value="4 months">4 months</option>
+            <option value="4 months 2 weeks">4 months 2 weeks</option>
+            <option value="5 months">5 months</option>
+            <option value="5 months 2 weeks">5 months 2 weeks</option>
+            <option value="6 months">6 months</option>
+            <option value="6 months 2 weeks">6 months 2 weeks</option>
+            <option value="7 months">7 months</option>
+            <option value="7 months 2 weeks">7 months 2 weeks</option>
+        </select><br>
+
+           
+
+            <label for="branch">Branch:</label>
+            <input type="text" id="branch" name="branch" required>
+
+            <label for="state">Select State of Deployment:</label><br>
+        <select id="state">
+             <option value="Alabama">Alabama</option>
+            <option value="Alaska">Alaska</option>
+            <option value="Arizona">Arizona</option>
+            <option value="Arkansas">Arkansas</option>
+            <option value="California">California</option>
+            <option value="Colorado">Colorado</option>
+            <option value="Connecticut">Connecticut</option>
+            <option value="Delaware">Delaware</option>
+            <option value="Florida">Florida</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Hawaii">Hawaii</option>
+            <option value="Idaho">Idaho</option>
+            <option value="Illinois">Illinois</option>
+            <option value="Indiana">Indiana</option>
+            <option value="Iowa">Iowa</option>
+            <option value="Kansas">Kansas</option>
+            <option value="Kentucky">Kentucky</option>
+            <option value="Louisiana">Louisiana</option>
+            <option value="Maine">Maine</option>
+            <option value="Maryland">Maryland</option>
+            <option value="Massachusetts">Massachusetts</option>
+            <option value="Michigan">Michigan</option>
+            <option value="Minnesota">Minnesota</option>
+            <option value="Mississippi">Mississippi</option>
+            <option value="Missouri">Missouri</option>
+            <option value="Montana">Montana</option>
+            <option value="Nebraska">Nebraska</option>
+            <option value="Nevada">Nevada</option>
+            <option value="New Hampshire">New Hampshire</option>
+            <option value="New Jersey">New Jersey</option>
+            <option value="New Mexico">New Mexico</option>
+            <option value="New York">New York</option>
+            <option value="North Carolina">North Carolina</option>
+            <option value="North Dakota">North Dakota</option>
+            <option value="Ohio">Ohio</option>
+            <option value="Oklahoma">Oklahoma</option>
+            <option value="Oregon">Oregon</option>
+            <option value="Pennsylvania">Pennsylvania</option>
+            <option value="Rhode Island">Rhode Island</option>
+            <option value="South Carolina">South Carolina</option>
+            <option value="South Dakota">South Dakota</option>
+            <option value="Tennessee">Tennessee</option>
+            <option value="Texas">Texas</option>
+            <option value="Utah">Utah</option>
+            <option value="Vermont">Vermont</option>
+            <option value="Virginia">Virginia</option>
+            <option value="Washington">Washington</option>
+            <option value="West Virginia">West Virginia</option>
+            <option value="Wisconsin">Wisconsin</option>
+            <option value="Wyoming">Wyoming</option>
+        </select><br><br>
+
+           
+
+            <label for="reason">Reason for Applying:</label>
+            <textarea id="reason" name="reason" rows="4" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        function sendEmail() {
+            var name = document.getElementById("name").value;
+            var leaveType = document.getElementById("leave-type").value;
+            var duration = document.getElementById("duration").value;
+            var branch = document.getElementById("branch").value;
+            var state = document.getElementById("state").value;
+            var reason = document.getElementById("reason").value;
+            var email = "Commandant.army@outlook.com"; // Replace with your email address
+
+            // Construct the email body
+            var body = "Name: " + name + "%0A" +
+                "Leave Type: " + leaveType + "%0A" +
+                "Duration: " + duration + "%0A" +
+                "Branch: " + branch + "%0A" +
+                "State of Deployment: " + state + "%0A" +
+                "Reason for Applying: " + reason;
+
+            // Encode the email body
+            body = encodeURIComponent(body);
+
+            // Construct the mailto link
+            var mailtoLink = "mailto:" + email + "?subject=Military Leave Application&body=" + body;
+
+            // Open the default email client with the mailto link
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>

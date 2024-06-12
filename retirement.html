@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military Retirement Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .submit-button {
+            background-color: #fec325;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-button:hover {
+            background-color: #fec325;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Retirement Application Form</h1>
+        <form id="retirementForm">
+            <label for="fullName">Name (Full Name):</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="serviceNumber">Service Number:</label>
+            <input type="text" id="serviceNumber" name="serviceNumber" required>
+
+            <label for="rank">Rank:</label>
+            <input type="text" id="rank" name="rank" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="contactInfo">Contact Information (Address, Phone Number, Email):</label>
+            <textarea id="contactInfo" name="contactInfo" rows="3" required></textarea>
+
+            <label for="dateOfEnlistment">Date of Enlistment:</label>
+            <input type="date" id="dateOfEnlistment" name="dateOfEnlistment" required>
+
+            <label for="serviceYears">Total Service Years:</label>
+            <input type="number" id="serviceYears" name="serviceYears" required>
+
+            <label for="currentUnit">Current Unit/Station:</label>
+            <input type="text" id="currentUnit" name="currentUnit" required>
+
+            <label for="mos">Military Occupational Specialty (MOS):</label>
+            <input type="text" id="mos" name="mos" required>
+
+            <label for="retirementType">Type of Retirement (Voluntary, Involuntary, Medical):</label>
+            <input type="text" id="retirementType" name="retirementType" required>
+
+            <label for="retirementDate">Retirement Date (Requested):</label>
+            <input type="date" id="retirementDate" name="retirementDate" required>
+
+            <label for="retirementBenefits">Retirement Benefits (Pension, Healthcare, etc.):</label>
+            <textarea id="retirementBenefits" name="retirementBenefits" rows="2" required></textarea>
+
+            <label for="retirementReason">Reason for Retirement (Optional):</label>
+            <textarea id="retirementReason" name="retirementReason" rows="3"></textarea>
+
+            <label for="signature">Signature:</label>
+            <input type="text" id="signature" name="signature" required>
+
+            <label for="signatureDate">Date:</label>
+            <input type="date" id="signatureDate" name="signatureDate" required>
+
+            <label for="additionalRequirements">Additional Requirements:</label>
+            <ul>
+                <li>Copy of Service Record (DD Form 214)</li>
+                <li>DD Form 2656 (Data for Payment of Retired Personnel)</li>
+                <li>DD Form 2657 (Survivor Benefit Plan (SBP) Election)</li>
+                <li>Proof of Residency</li>
+                <li>Verification of Service (DD Form 220)</li>
+                <li>Retirement Points Statement (for Reserve/National Guard personnel)</li>
+                <li>Certificate of Release or Discharge from Active Duty (DD Form 214)</li>
+            </ul>
+
+            <p><em><strong>Please ensure all information is accurate and complete to avoid delays in processing. Additional documentation may be required based on individual circumstances. Retirement benefits and eligibility will be determined in accordance with U.S.ARMY regulations.</p></strong></em>
+
+            <button type="button" class="submit-button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function submitForm() {
+            const form = document.getElementById('retirementForm');
+            const formData = new FormData(form);
+            const params = new URLSearchParams();
+
+            for (const [key, value] of formData.entries()) {
+                params.append(key, value);
+            }
+
+            const email = "Commandant.army@outlook.com";
+            const subject = "Military Retirement Application";
+            const body = params.toString().replace(/&/g, '%0D%0A').replace(/=/g, ': ');
+
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+    </script>
+</body>
+</html>

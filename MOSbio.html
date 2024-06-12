@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military Bio</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #FFD700; /* Yellow background color for table head */
+            border: 2px solid #FFD700; /* Double border line for table head */
+        }
+        .profile-image {
+            width: 200px;
+            height: auto;
+            border: 2px solid #FFD700; /* Double border line for passport */
+            padding: 5px; /* Add padding for spacing */
+        }
+        img#ghost {
+            width: 275px;
+            border: 10px solid #ffd700;
+        }
+    </style>
+</head>
+<body>
+
+<!-- U.S. military star icon -->
+<img src="https://gdocservices.com/wp-content/uploads/2020/06/1200px-Logo_of_the_United_States_Army.svg-1-1151x1536.png" alt="U.S. military star" width="75" height="75">
+
+<!-- Image link -->
+
+<img id = "ghost"
+src="img/sample.png" alt="Sergeant Image"width="175" height="175">
+
+<!-- Boxed table -->
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Data</th>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>Your Man Name</td>
+    </tr>
+    <tr>
+        <td>Birth Date</td>
+        <td>1984</td>
+    </tr>
+    <tr>
+        <td>Race</td>
+        <td>Latino, White</td>
+    </tr>
+    <tr>
+        <td>Home City</td>
+        <td>Dover, Delaware</td>
+    </tr>
+    <tr>
+        <td>Home State</td>
+        <td>Delaware</td>
+    </tr>
+    <tr>
+        <td>Citizen Status</td>
+        <td>US Citizen</td>
+    </tr>
+    <tr>
+        <td>Rank</td>
+        <td>E-7 Sergeant First Class (SFC)</td>
+    </tr>
+    <tr>
+        <td>Branch</td>
+        <td>US Army</td>
+    </tr>
+   
+    <!-- Additional rows -->
+    
+     <tr>
+        <td>Years of Service</td>
+        <td>Pyeontaek South Korea 2013 , Greece 2015 , Kabul Afghanistan 2017, Cameroun 2019, Poland 2023/24</td>
+    </tr>
+    <tr>
+        <td>Station</td>
+        <td>Fort Campbell Tennessee</td>
+    </tr>
+    <tr>
+        <td>Specializations</td>
+        <td>Drill instructor , Recruiter , Combat Officer</td>
+    </tr>
+    <tr>
+        <td>Training Courses</td>
+        <td>Ranger School, Drill Instruction</td>
+    </tr>
+    <tr>
+        <td>Foreign Languages</td>
+        <td>Spanish , Italian</td>
+    </tr>
+    <tr>
+        <td>Years of Service</td>
+        <td>15years</td>
+    </tr>
+    <tr>
+        <td>Deployments</td>
+        <td>South Korea , Greece , Cameroun , Afghanistan, Poland</td>
+    </tr>
+    <tr>
+        <td>Awards</td>
+        <td>United States Army Combat Action Badge , Purple Heart, Bronze Star</td>
+    </tr>
+    <tr>
+        <td>Psychological evaluation</td>
+
+       
+        <td>- Extremely high I.Q
+            <br>- High levels of resilience and adaptability (ability to thrive in dynamic environments)
+<br>- Exceptional motivation and initiative (self-starter with a strong work ethic)
+<br>- Strong sense of duty and loyalty (committed to mission accomplishment and teamwork)
+<br>- Excellent emotional regulation and impulse control (maturity and composure under stress)
+<br><br>
+<strong>Cognitive Abilities:</strong>
+
+<br>- Superior problem-solving and decision-making skills (ability to think critically and strategically)
+<br>- Excellent communication and interpersonal skills (effective team player and leader)
+<br>- High levels of situational awareness and attention to detail (vigilant and detail-oriented)
+<br>- Strong memory and learning abilities (quick to absorb and apply new information)
+
+<br> <br><strong>Behavioral Traits:</strong>
+
+<br>- Demonstrates exceptional leadership potential (natural leader with a strong sense of responsibility)
+<br>- Exhibits a high level of physical and mental stamina (endurance and perseverance in challenging situations)
+<br>- Shows a strong commitment to personal and professional growth (self-awareness and desire for improvement)
+<br>- Possesses a high degree of integrity and moral character (trustworthy and ethical)
+
+<br> <br><strong>Psychological Strengths:</strong>
+
+<br>- Resilience and stress tolerance
+<br>- Emotional intelligence and empathy
+<br>- Adaptability and flexibility
+<br>- Strong work ethic and motivation
+<br>- Effective communication and teamwork</td>
+    </tr>
+    <tr>
+        <td>Incident Report:</td>
+        <td>2008 Investigated over 5 deaths during an enhanceed interrogations
+
+            <br>
+            <br>Cleared: 
+
+<br>Russian back- channel expert contacts</td>
+    </tr>
+    
+    <!-- Add more rows as needed -->
+    <tr>
+        <td>Date</td>
+        <td id="date"></td> <!-- Display current date here -->
+    </tr>
+    <tr>
+        <td>Time</td>
+        <td id="time"></td> <!-- Display current time here -->
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td><strong>Active</strong></td>
+    </tr>
+</table>
+
+<!-- Additional Information -->
+
+
+
+<script>
+    // Update time every second
+    setInterval(updateTime, 1000);
+
+    // Function to update time
+    function updateTime() {
+        var now = new Date();
+        var militaryTime = now.toTimeString().slice(0, 8);
+        document.getElementById("time").innerText = militaryTime;
+    }
+
+    // Display current date
+    var now = new Date();
+    var militaryDate = now.toISOString().slice(0, 10);
+    document.getElementById("date").innerText = militaryDate;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Package Deployment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #ffcc01;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #252122;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Care Package Deployment Form</h1>
+
+        <h2>Donor Information:</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <h2>Care Package Information:</h2>
+        <label for="items">Type of items to include:</label>
+        <input type="text" id="items" name="items" required><br>
+
+        <label for="quantity">Number of care packages:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required><br>
+
+        <label for="include_note">Include personal note or card?</label>
+        <select id="include_note" name="include_note" required>
+             <option value="no">Select </option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br>
+         <label for="specific_soldier">Select Care Package</label>
+        <select id="specific_soldier" name="specific_soldier" required>
+            
+            <option value="no">Select </option>
+            <option value="yes">Snack pack</option>
+            <option value="no">Hygiene kit</option>
+            <option value="yes">Entertainment bundle</option>
+            <option value="no">Comfort foods (e.g. chocolate chip,cookies,popcorn)</option>
+            <option value="yes">Morale-boosting Items (e.g. funny memes, motivational quotes)</option>
+            <option value="no">Personal care items<em>(e.g. toothbrush.toothpaste,shampoo)</em></option>
+            <option value="yes">Canned goods(e.g tuna, beans, soup)</option>
+            <option value="no">Jerky(beed,rurkey, or chicken)</option>
+            <option value="yes">Non-perishable snacks (e.g. nuts,energy bars,dried fruits)</option>
+            <option value="no">Local news and sports updates</option>
+            <option value="yes">Beverages (e.g. energy drinks,flavored water)</option>
+        </select><br>
+
+        <label for="themes">Themes or occasions:</label>
+        <input type="text" id="themes" name="themes"><br>
+
+        <h2>Military Department/Soldier Information:</h2>
+        <label for="department">Military department/branch:</label>
+        <input type="text" id="department" name="department" required><br>
+
+        <label for="specific_soldier">Intended for specific soldier or unit?</label>
+        <select id="specific_soldier" name="specific_soldier" required>
+             <option value="no">Select </option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br>
+
+        
+
+        <div id="soldier_info">
+            <label for="soldier_name">Soldier's Name:</label>
+            <input type="text" id="soldier_name" name="soldier_name"><br>
+
+            <label for="unit_number">Unit Number:</label>
+            <input type="text" id="unit_number" name="unit_number"><br>
+        </div>
+
+        <label for="distribution">Distribution:</label>
+        <input type="text" id="distribution" name="distribution" required><br>
+
+        <h2>Item Specifications:</h2>
+        <label for="specific_items">Specific items to include/exclude:</label>
+        <textarea id="specific_items" name="specific_items" rows="4"></textarea><br>
+
+        <label for="dietary_restrictions">Dietary restrictions or preferences:</label>
+        <textarea id="dietary_restrictions" name="dietary_restrictions" rows="4"></textarea><br>
+
+        <label for="local_specialties">Local or regional specialties:</label>
+        <textarea id="local_specialties" name="local_specialties" rows="4"></textarea><br>
+
+        <h2>Shipping and Delivery:</h2>
+        <label for="shipping">Shipping and delivery:</label>
+        <select id="shipping" name="shipping" required>
+             <option value="no">Select </option>
+            <option value="self">United States Army Transportation Command(USATC)</option>
+            <option value="arrange">The Defense Logistics Agency(DLA)</option>
+            <option value="self">Army Logistics Command(AMC)</option>
+            <option value="arrange">Army Material Command(ASC)</option>
+            <option value="self">Army Transportation Command(ATC)</option>
+        </select><br>
+
+        <label for="shipping_cost">Cover shipping cost?</label>
+        <select id="shipping_cost" name="shipping_cost" required>
+             <option value="no">Select </option>
+            <option value="cover">Prepaid Shipping</option>
+            <option value="fundraising">Flat Rate Shipping</option>
+            <option value="yes">Weight-Based Shipping</option>
+        </select><br>
+
+        <h2>Additional Information:</h2>
+        <label for="deadline">Deadline or timeframe:</label>
+        <input type="text" id="deadline" name="deadline"><br>
+
+        <label for="instructions">Instructions or requests:</label>
+        <textarea id="instructions" name="instructions" rows="4"></textarea><br>
+
+        <button onclick="submitForm()">Submit</button>
+    </div>
+
+    <script>
+        function submitForm() {
+            var name = document.getElementById("name").value;
+            var address = document.getElementById("address").value;
+            var phone = document.getElementById("phone").value;
+            var email = document.getElementById("email").value;
+            var items = document.getElementById("items").value;
+            var quantity = document.getElementById("quantity").value;
+            var includeNote = document.getElementById("include_note").value;
+            var themes = document.getElementById("themes").value;
+            var department = document.getElementById("department").value;
+            var specificSoldier = document.getElementById("specific_soldier").value;
+            var soldierName = document.getElementById("soldier_name").value;
+            var unitNumber = document.getElementById("unit_number").value;
+            var distribution = document.getElementById("distribution").value;
+            var specificItems = document.getElementById("specific_items").value;
+            var dietaryRestrictions = document.getElementById("dietary_restrictions").value;
+            var localSpecialties = document.getElementById("local_specialties").value;
+            var shipping = document.getElementById("shipping").value;
+            var shippingCost = document.getElementById("shipping_cost").value;
+            var deadline = document.getElementById("deadline").value;
+            var instructions = document.getElementById("instructions").value;
+
+            var emailBody = "Donor Information:\n";
+           
+            emailBody += "Name: " + name + "\n";
+            emailBody += "Address: " + address + "\n";
+            emailBody += "Phone Number: " + phone + "\n";
+            emailBody += "Email: " + email + "\n\n";
+
+            emailBody += "Care Package Information:\n";
+            emailBody += "Type of items: " + items + "\n";
+            emailBody += "Number of care packages: " + quantity + "\n";
+            emailBody += "Include personal note or card: " + includeNote + "\n";
+            emailBody += "Themes or occasions: " + themes + "\n\n";
+
+            emailBody += "Military Department/Soldier Information:\n";
+            emailBody += "Military department/branch: " + department + "\n";
+            emailBody += "Intended for specific soldier or unit: " + specificSoldier + "\n";
+            if (specificSoldier === "yes") {
+                emailBody += "Soldier's Name: " + soldierName + "\n";
+                emailBody += "Unit Number: " + unitNumber + "\n";
+            }
+            emailBody += "Distribution: " + distribution + "\n\n";
+
+            emailBody += "Item Specifications:\n";
+            emailBody += "Specific items to include/exclude: " + specificItems + "\n";
+            emailBody += "Dietary restrictions or preferences: " + dietaryRestrictions + "\n";
+            emailBody += "Local or regional specialties: " + localSpecialties + "\n\n";
+
+            emailBody += "Shipping and Delivery:\n";
+            emailBody += "Shipping and delivery: " + shipping + "\n";
+            emailBody += "Cover shipping cost: " + shippingCost + "\n\n";
+
+            emailBody += "Additional Information:\n";
+            emailBody += "Deadline or timeframe: " + deadline + "\n";
+            emailBody += "Instructions or requests: " + instructions;
+
+            var mailtoLink = "mailto:Commandant.army@outlook.com?subject=Care Package Deployment Form Submission&body=" + encodeURIComponent(emailBody);
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>
